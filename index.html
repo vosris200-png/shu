@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中学受験カリキュラム</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            /* Add background image */
+            background-image: url('https://images.unsplash.com/photo-1549490349-86433628d18e?fit=crop&w=1920&h=1080&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        /* Add a semi-transparent overlay to the main content area */
+        #app-container {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Style for the back button */
+        .back-button {
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div id="app-container" class="max-w-7xl mx-auto">
+
+        <!-- メインページ -->
+        <div id="main-page" class="page active">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-10 text-center">中学受験カリキュラム</h1>
+            
+            <div class="space-y-12">
+                <!-- 小学1年生 -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-700 mb-6">小学1年生</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div data-page-link="1st_grade_math" class="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">算数</h3>
+                            <p class="text-sm opacity-90">数の概念、簡単な計算</p>
+                        </div>
+                        <div data-page-link="1st_grade_japanese" class="bg-gradient-to-br from-red-400 to-red-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">国語</h3>
+                            <p class="text-sm opacity-90">ひらがな、カタカナ、漢字</p>
+                        </div>
+                        <div data-page-link="1st_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">理科</h3>
+                            <p class="text-sm opacity-90">身の回りの自然、生き物</p>
+                        </div>
+                        <div data-page-link="1st_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">社会</h3>
+                            <p class="text-sm opacity-90">学校生活、行事</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 小学2年生 -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-700 mb-6">小学2年生</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div data-page-link="2nd_grade_math" class="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">算数</h3>
+                            <p class="text-sm opacity-90">九九、くり上がりのあるたし算</p>
+                        </div>
+                        <div data-page-link="2nd_grade_japanese" class="bg-gradient-to-br from-red-400 to-red-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">国語</h3>
+                            <p class="text-sm opacity-90">音読、読解、短い作文</p>
+                        </div>
+                        <div data-page-link="2nd_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">理科</h3>
+                            <p class="text-sm opacity-90">季節と生き物、天気</p>
+                        </div>
+                        <div data-page-link="2nd_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">社会</h3>
+                            <p class="text-sm opacity-90">町の様子、公共施設</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 小学3年生 -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-700 mb-6">小学3年生</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div data-page-link="3rd_grade_math" class="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">算数</h3>
+                            <p class="text-sm opacity-90">わり算、小数の導入</p>
+                        </div>
+                        <div data-page-link="3rd_grade_japanese" class="bg-gradient-to-br from-red-400 to-red-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">国語</h3>
+                            <p class="text-sm opacity-90">物語の読解、文法</p>
+                        </div>
+                        <div data-page-link="3rd_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">理科</h3>
+                            <p class="text-sm opacity-90">植物の育ち方、重さ</p>
+                        </div>
+                        <div data-page-link="3rd_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">社会</h3>
+                            <p class="text-sm opacity-90">市区町村、農産物</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 小学4年生 -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-700 mb-6">小学4年生</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div data-page-link="4th_grade_math" class="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">算数</h3>
+                            <p class="text-sm opacity-90">面積、概数、直方体</p>
+                        </div>
+                        <div data-page-link="4th_grade_japanese" class="bg-gradient-to-br from-red-400 to-red-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">国語</h3>
+                            <p class="text-sm opacity-90">物語の主題、慣用句</p>
+                        </div>
+                        <div data-page-link="4th_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">理科</h3>
+                            <p class="text-sm opacity-90">電気、星座、天体</p>
+                        </div>
+                        <div data-page-link="4th_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">社会</h3>
+                            <p class="text-sm opacity-90">都道府県、地形</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 小学5年生 -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-700 mb-6">小学5年生</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div data-page-link="5th_grade_math" class="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">算数</h3>
+                            <p class="text-sm opacity-90">割合、速さ、グラフ</p>
+                        </div>
+                        <div data-page-link="5th_grade_japanese" class="bg-gradient-to-br from-red-400 to-red-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">国語</h3>
+                            <p class="text-sm opacity-90">随筆、説明文の読解</p>
+                        </div>
+                        <div data-page-link="5th_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">理科</h3>
+                            <p class="text-sm opacity-90">電流、気象、人体</p>
+                        </div>
+                        <div data-page-link="5th_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">社会</h3>
+                            <p class="text-sm opacity-90">日本の産業、貿易</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 小学6年生 -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-700 mb-6">小学6年生</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div data-page-link="6th_grade_math" class="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">算数</h3>
+                            <p class="text-sm opacity-90">比、場合の数、速さ</p>
+                        </div>
+                        <div data-page-link="6th_grade_japanese" class="bg-gradient-to-br from-red-400 to-red-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">国語</h3>
+                            <p class="text-sm opacity-90">文学史、古典、論説文</p>
+                        </div>
+                        <div data-page-link="6th_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">理科</h3>
+                            <p class="text-sm opacity-90">てこ、滑車、太陽系</p>
+                        </div>
+                        <div data-page-link="6th_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">社会</h3>
+                            <p class="text-sm opacity-90">歴史、政治、国際関係</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 各学年・教科の詳細ページ (JavaScriptで表示/非表示を切り替え) -->
+        <div id="1st_grade_math" class="page"></div>
+        <div id="1st_grade_japanese" class="page"></div>
+        <div id="1st_grade_science" class="page"></div>
+        <div id="1st_grade_social_studies" class="page"></div>
+        <div id="2nd_grade_math" class="page"></div>
+        <div id="2nd_grade_japanese" class="page"></div>
+        <div id="2nd_grade_science" class="page"></div>
+        <div id="2nd_grade_social_studies" class="page"></div>
+        <div id="3rd_grade_math" class="page"></div>
+        <div id="3rd_grade_japanese" class="page"></div>
+        <div id="3rd_grade_science" class="page"></div>
+        <div id="3rd_grade_social_studies" class="page"></div>
+        <div id="4th_grade_math" class="page"></div>
+        <div id="4th_grade_japanese" class="page"></div>
+        <div id="4th_grade_science" class="page"></div>
+        <div id="4th_grade_social_studies" class="page"></div>
+        <div id="5th_grade_math" class="page"></div>
+        <div id="5th_grade_japanese" class="page"></div>
+        <div id="5th_grade_science" class="page"></div>
+        <div id="5th_grade_social_studies" class="page"></div>
+        <div id="6th_grade_math" class="page"></div>
+        <div id="6th_grade_japanese" class="page"></div>
+        <div id="6th_grade_science" class="page"></div>
+        <div id="6th_grade_social_studies" class="page"></div>
+
+        <!-- 単元詳細ページ -->
+        <div id="unit_details_page" class="page"></div>
+
+    </div>
+
+    <script>
+        // すべてのカリキュラムデータを保持するオブジェクト
+        const curriculumData = {
+            "1st_grade_math": { title: "小学1年生 算数", units: ["大きな数と小さな数", "たし算とひき算", "とけい", "かたちあそび"] },
+            "1st_grade_japanese": { title: "小学1年生 国語", units: ["ひらがな・カタカナの読み書き", "かん字の学習", "文しょうの読解"] },
+            "1st_grade_science": { title: "小学1年生 理科", units: ["植物の観察", "昆虫の生活", "季節と天気"] },
+            "1st_grade_social_studies": { title: "小学1年生 社会", units: ["家族や学校", "公共の場所", "日本の行事"] },
+            "2nd_grade_math": { title: "小学2年生 算数", units: ["九九", "たし算・ひき算の筆算", "長さと水のかさ", "図形"] },
+            "2nd_grade_japanese": { title: "小学2年生 国語", units: ["漢字学習", "文章の読解", "説明文と物語文"] },
+            "2nd_grade_science": { title: "小学2年生 理科", units: ["生き物と季節", "身近な自然", "気温と天気の変化"] },
+            "2nd_grade_social_studies": { title: "小学2年生 社会", units: ["学校のまわり", "地域の様子", "公共施設"] },
+            "3rd_grade_math": { title: "小学3年生 算数", units: ["わり算", "小数と分数", "図形の面積"] },
+            "3rd_grade_japanese": { title: "小学3年生 国語", units: ["物語文の読解", "随筆の読解", "文法", "漢字学習"] },
+            "3rd_grade_science": { title: "小学3年生 理科", units: ["植物の育ち方", "昆虫のからだ", "磁石の性質"] },
+            "3rd_grade_social_studies": { title: "小学3年生 社会", units: ["日本の地形", "都道府県", "産業"] },
+            "4th_grade_math": { title: "小学4年生 算数", units: ["面積", "概数", "直方体", "速さ"] },
+            "4th_grade_japanese": { title: "小学4年生 国語", units: ["物語の主題", "説明文の読解", "文法と語彙", "漢字学習"] },
+            "4th_grade_science": { title: "小学4年生 理科", units: ["星座と天体", "電気", "物の溶け方"] },
+            "4th_grade_social_studies": { title: "小学4年生 社会", units: ["日本の地形", "食料生産", "工業"] },
+            "5th_grade_math": { title: "小学5年生 算数", units: ["割合", "速さ", "グラフ", "平均と中央値"] },
+            "5th_grade_japanese": { title: "小学5年生 国語", units: ["文学史", "随筆の読解", "古典", "漢字学習"] },
+            "5th_grade_science": { title: "小学5年生 理科", units: ["電流と電圧", "気象と気候", "人体"] },
+            "5th_grade_social_studies": { title: "小学5年生 社会", units: ["日本の産業、貿易"] },
+            "6th_grade_math": { title: "小学6年生 算数", units: ["比", "場合の数", "確率", "速さと道のり"] },
+            "6th_grade_japanese": { title: "小学6年生 国語", units: ["文学史", "論説文の読解", "文法と語彙", "漢字学習"] },
+            "6th_grade_science": { title: "小学6年生 理科", units: ["てこ、滑車、太陽系"] },
+            "6th_grade_social_studies": { title: "小学6年生 社会", units: ["日本の歴史", "政治と国際関係", "経済"] },
+            
+            // 例題データ
+            "example_questions": {
+                // 算数
+                "大きな数と小さな数": [
+                    { "question": "100より10大きい数は？", "answer": "110" },
+                    { "question": "1000から100を引くと？", "answer": "900" }
+                ],
+                "たし算とひき算": [
+                    { "question": "25 + 38 = ?", "answer": "63" },
+                    { "question": "100 - 45 = ?", "answer": "55" }
+                ],
+                "とけい": [
+                    { "question": "今から30分後、時計の長針はどこを指していますか？", "answer": "今が12時ちょうどなら、6を指しています。長針は1時間で1周します。" },
+                    { "question": "午前8時から午後3時までの時間（何時間）を計算しなさい。", "answer": "7時間" }
+                ],
+                "かたちあそび": [
+                    { "question": "まる、さんかく、しかくの形をしたものを身の回りから1つずつ見つけてください。", "answer": "まる：ボール、時計<br>さんかく：おにぎり、三角定規<br>しかく：本、テレビ" }
+                ],
+                "九九": [
+                    { "question": "5 × 7 = ?", "answer": "35" },
+                    { "question": "45 ÷ 5 = ?", "answer": "9" }
+                ],
+                "たし算・ひき算の筆算": [
+                    { "question": "123 + 456 = ?", "answer": "579" },
+                    { "question": "987 - 654 = ?", "answer": "333" }
+                ],
+                "長さと水のかさ": [
+                    { "question": "1メートルは何センチメートルですか？", "answer": "100センチメートル" },
+                    { "question": "1リットルは何ミリリットルですか？", "answer": "1000ミリリットル" }
+                ],
+                "図形": [
+                    { "question": "辺が4本あり、角が4つある図形を何と言いますか？", "answer": "四角形" }
+                ],
+                "わり算": [
+                    { "question": "24 ÷ 3 = ?", "answer": "8" },
+                    { "question": "45 ÷ 9 = ?", "answer": "5" }
+                ],
+                "小数と分数": [
+                    { "question": "0.5を分数で表しなさい。", "answer": "$$ \\frac{1}{2} $$" },
+                    { "question": "$$ \\frac{1}{4} $$を小数で表しなさい。", "answer": "0.25" }
+                ],
+                "図形の面積": [
+                    { "question": "縦3cm、横4cmの長方形の面積は？", "answer": "12$$ \\text{cm}^2 $$" },
+                    { "question": "底辺が10cm、高さが6cmの三角形の面積は？", "answer": "30$$ \\text{cm}^2 $$" }
+                ],
+                "面積": [
+                    { "question": "縦5cm、横8cmの長方形の面積は？", "answer": "40$$ \\text{cm}^2 $$" },
+                    { "question": "1辺が6cmの正方形の面積は？", "answer": "36$$ \\text{cm}^2 $$" }
+                ],
+                "概数": [
+                    { "question": "258を十の位で四捨五入しなさい。", "answer": "260" }
+                ],
+                "直方体": [
+                    { "question": "縦2cm、横3cm、高さ4cmの直方体の体積は？", "answer": "24$$ \\text{cm}^3 $$" }
+                ],
+                "速さ": [
+                    { "question": "時速60kmで2時間進むと何km？", "answer": "120km" },
+                    { "question": "10kmを5時間で歩くと時速何km？", "answer": "2km" }
+                ],
+                "割合": [
+                    { "question": "300円の20%はいくらですか？", "answer": "60円" }
+                ],
+                "グラフ": [
+                    { "question": "あるクラスの生徒の好きなスポーツを調べたところ、サッカーが10人、バスケが8人、野球が6人でした。これをグラフで表すには、どのようなグラフが適していますか？", "answer": "棒グラフや円グラフが適しています。" }
+                ],
+                "平均と中央値": [
+                    { "question": "点数が50点、60点、70点の3人の平均点は何点ですか？", "answer": "60点" },
+                    { "question": "5人（点数：80, 75, 90, 60, 85）のテストの点数の中央値を求めなさい。", "answer": "点数を小さい順に並べると 60, 75, 80, 85, 90 なので、真ん中の値である 80点 が中央値です。" }
+                ],
+                "比": [
+                    { "question": "AとBの比が2:3で、Aが10の場合、Bはいくつですか？", "answer": "15" },
+                    { "question": "水150mLとジュース50mLを混ぜたときの比を最も簡単な整数の比で表しなさい。", "answer": "3:1" }
+                ],
+                "場合の数": [
+                    { "question": "A, B, Cの3人から2人を選ぶときの組み合わせは何通りありますか？", "answer": "3通り（AとB、AとC、BとC）" }
+                ],
+                "確率": [
+                    { "question": "さいころを1回振って、奇数の目が出る確率は？", "answer": "$$ \\frac{3}{6} = \\frac{1}{2} $$" }
+                ],
+                "てこと滑車": [
+                    { "question": "てこの原理を応用している道具を一つ挙げなさい。", "answer": "ハサミ、ペンチ、栓抜きなど" },
+                    { "question": "滑車を使って重い荷物を持ち上げるとき、力の向きを変えることができるのはなぜですか？", "answer": "ロープを下に引くことで、荷物を上に上げることができるからです。" }
+                ],
+                
+                // 国語
+                "ひらがな・カタカナの読み書き": [
+                    { "question": "「いぬ」をカタカナで書きなさい。", "answer": "イヌ" }
+                ],
+                "かん字の学習": [
+                    { "question": "「山」という漢字の読み方を答えなさい。", "answer": "やま、サン" },
+                    { "question": "「林」という漢字を使い、文を作りなさい。", "answer": "私は森の近くに住んでいます。" },
+                    { "question": "「花」という漢字の読み方を答えなさい。", "answer": "はな、カ" },
+                    { "question": "「草」という漢字を使って、「〜〜が生える」という文を完成させなさい。", "answer": "草が生える" },
+                    { "question": "「川」という漢字を使って、文を作りなさい。", "answer": "川で泳ぎました。" },
+                    { "question": "「田」という漢字を使って、文を作りなさい。", "answer": "田んぼでお米を育てます。" },
+                    { "question": "「日」という漢字の読み方を答えなさい。", "answer": "ひ、に、ニチ" },
+                    { "question": "「月」という漢字を使って、文を作りなさい。", "answer": "夜空に月が出ました。" },
+                    { "question": "「犬」という漢字を使って、文を作りなさい。", "answer": "私の家には犬がいます。" },
+                    { "question": "「猫」という漢字の読み方を答えなさい。", "answer": "ねこ、ビョウ" }
+                ],
+                "文章の読解": [
+                    { "question": "物語文で、登場人物の気持ちを読み取るにはどうすれば良いですか？", "answer": "セリフや行動、表情などから推測します。" }
+                ],
+                "説明文と物語文": [
+                    { "question": "説明文と物語文の違いは何ですか？", "answer": "説明文は物事を分かりやすく伝えるための文章で、物語文は出来事を語る文章です。" }
+                ],
+                "物語文の読解": [
+                    { "question": "登場人物が「とても悲しい顔をしていました」という記述から、どんな気持ちを読み取ることができますか？", "answer": "悲しい、辛い、落胆しているなど。" }
+                ],
+                "随筆の読解": [
+                    { "question": "随筆は、作者の何が書かれていることが多いですか？", "answer": "作者の考えや感じたこと、身の回りの出来事など。" },
+                    { "question": "随筆で、「なるほど、そうか」と作者が感じた場面から、作者が何を学んだのかを推測しなさい。", "answer": "新しい発見や気づきを得た、考え方が変わった" }
+                ],
+                "文法": [
+                    { "question": "「大きな犬」の「大きな」は、何詞ですか？", "answer": "形容詞" },
+                    { "question": "「走る」の活用形を一つ挙げなさい。", "answer": "走らない（未然形）、走ります（連用形）、走る（終止形）など" }
+                ],
+                "物語の主題": [
+                    { "question": "物語の「主題」とは何ですか？", "answer": "作者が伝えたい一番大切なメッセージやテーマです。" }
+                ],
+                "文法と語彙": [
+                    { "question": "主語と述語の関係を説明しなさい。", "answer": "誰が（何が）どうする、どうだ、何だ、ある、いる、という関係です。" }
+                ],
+                "文学史": [
+                    { "question": "夏目漱石の代表作を一つ挙げなさい。", "answer": "『吾輩は猫である』、『坊っちゃん』など" },
+                    { "question": "平安時代に書かれた女性による文学作品を一つ挙げなさい。", "answer": "『源氏物語』、『枕草子』" }
+                ],
+                "論説文の読解": [
+                    { "question": "論説文の結論は、どの部分に書かれていることが多いですか？", "answer": "文章の最後や冒頭、あるいは段落の最後に書かれていることが多いです。" },
+                    { "question": "論説文を要約する際のポイントは何ですか？", "answer": "筆者の主張と、その主張を支える根拠を抜き出すことです。" }
+                ],
+                "漢字学習": [
+                    { "question": "三年生で学習する「春」の読み方を答えなさい。", "answer": "はる" },
+                    { "question": "三年生で学習する「重」を使った熟語を一つ挙げなさい。", "answer": "重要、体重、重力など" },
+                    { "question": "三年生で学習する「考」を使った文を作りなさい。", "answer": "将来の夢を考える。" },
+                    { "question": "三年生で学習する「弱」の反対語を答えなさい。", "answer": "強" },
+                    { "question": "三年生で学習する「葉」を使った文を作りなさい。", "answer": "紅葉がきれいな季節だ。" },
+                    { "question": "三年生で学習する「光」を使った文を作りなさい。", "answer": "窓から光が差し込む。" },
+                    { "question": "三年生で学習する「風」を使った文を作りなさい。", "answer": "強い風が吹いている。" },
+                    { "question": "三年生で学習する「冬」を使った文を作りなさい。", "answer": "冬休みは雪で遊んだ。" },
+                    { "question": "三年生で学習する「温」を使った熟語を一つ挙げなさい。", "answer": "温暖、気温、温泉など" },
+                    { "question": "三年生で学習する「通」を使った文を作りなさい。", "answer": "毎日学校に通っている。" }
+                ],
+                "4th_grade_japanese_kanji": [
+                    { "question": "四年生で学習する「他」の読み方を答えなさい。", "answer": "た" },
+                    { "question": "四年生で学習する「関」を使った熟語を一つ挙げなさい。", "answer": "関係、関心、関門など" },
+                    { "question": "四年生で学習する「境」を使った文を作りなさい。", "answer": "国境を越えて旅をする。" },
+                    { "question": "四年生で学習する「希」を使った熟語を一つ挙げなさい。", "answer": "希望、希少、希求など" },
+                    { "question": "四年生で学習する「姿」を使った文を作りなさい。", "answer": "遠くに友達の姿が見える。" },
+                    { "question": "四年生で学習する「続」を使った熟語を一つ挙げなさい。", "answer": "継続、連続、接続など" },
+                    { "question": "四年生で学習する「選」を使った文を作りなさい。", "answer": "好きな本を選ぶ。" },
+                    { "question": "四年生で学習する「確」を使った熟語を一つ挙げなさい。", "answer": "確認、確実、確かめるなど" },
+                    { "question": "四年生で学習する「絶」を使った熟語を一つ挙げなさい。", "answer": "絶対、絶望、絶滅など" },
+                    { "question": "四年生で学習する「団」を使った文を作りなさい。", "answer": "みんなで団結して頑張る。" }
+                ],
+                "5th_grade_japanese_kanji": [
+                    { "question": "五年生で学習する「拡」の読み方を答えなさい。", "answer": "かく" },
+                    { "question": "五年生で学習する「潔」を使った熟語を一つ挙げなさい。", "answer": "清潔、簡潔、潔白など" },
+                    { "question": "五年生で学習する「承」を使った文を作りなさい。", "answer": "承諾の返事をする。" },
+                    { "question": "五年生で学習する「操」を使った文を作りなさい。", "answer": "機械を操作する。" },
+                    { "question": "五年生で学習する「競」を使った熟語を一つ挙げなさい。", "answer": "競争、競技、競り合うなど" },
+                    { "question": "五年生で学習する「極」を使った文を作りなさい。", "answer": "北極と南極。" },
+                    { "question": "五年生で学習する「献」を使った熟語を一つ挙げなさい。", "answer": "献立、貢献、献身など" },
+                    { "question": "五年生で学習する「厳」を使った文を作りなさい。", "answer": "厳重な注意を受ける。" },
+                    { "question": "五年生で学習する「庁」を使った熟語を一つ挙げなさい。", "answer": "県庁、官庁、気象庁など" },
+                    { "question": "五年生で学習する「挑」を使った文を作りなさい。", "answer": "難しい課題に挑戦する。" }
+                ],
+                "6th_grade_japanese_kanji": [
+                    { "question": "六年生で学習する「歓」の読み方を答えなさい。", "answer": "かん" },
+                    { "question": "六年生で学習する「揮」を使った熟語を一つ挙げなさい。", "answer": "指揮、発揮、指揮官など" },
+                    { "question": "六年生で学習する「契」を使った文を作りなさい。", "answer": "契約書にサインをする。" },
+                    { "question": "六年生で学習する「慶」を使った熟語を一つ挙げなさい。", "answer": "慶事、慶祝、慶賀など" },
+                    { "question": "六年生で学習する「轄」を使った文を作りなさい。", "answer": "警察官の管轄する地域。" },
+                    { "question": "六年生で学習する「衡」を使った熟語を一つ挙げなさい。", "answer": "均衡、平衡、天秤など" },
+                    { "question": "六年生で学習する「肯」を使った文を作りなさい。", "answer": "相手の意見を肯定する。" },
+                    { "question": "六年生で学習する「遣」を使った熟語を一つ挙げなさい。", "answer": "派遣、特使、遺憾など" },
+                    { "question": "六年生で学習する「唆」を使った熟語を一つ挙げなさい。", "answer": "教唆、唆すなど" },
+                    { "question": "六年生で学習する「誠」を使った文を作りなさい。", "answer": "誠実に仕事に取り組む。" }
+                ],
+                
+                // 理科
+                "植物の観察": [
+                    { "question": "植物の葉っぱで光合成が行われるのはなぜですか？", "answer": "葉には光合成を行うための葉緑体があるからです。" },
+                    { "question": "植物が育つのに必要なものは何ですか？", "answer": "お日様の光、水、空気、そして土です。" }
+                ],
+                "昆虫の生活": [
+                    { "question": "チョウの幼虫は何と呼ばれますか？", "answer": "いもむし" },
+                    { "question": "チョウが卵からかえって、さなぎになるまでを何と言いますか？", "answer": "幼虫です。" }
+                ],
+                "季節と天気": [
+                    { "question": "夏に多く降る雨を何と言いますか？", "answer": "にわか雨、夕立など" },
+                    { "question": "冬に降る、白くて冷たいものを何と言いますか？", "answer": "雪です。" }
+                ],
+                "生き物と季節": [
+                    { "question": "冬になると葉を落とす木を何と言いますか？", "answer": "落葉樹" },
+                    { "question": "カブトムシやセミは、主にどの季節に見つけられますか？", "answer": "夏です。" }
+                ],
+                "身近な自然": [
+                    { "question": "水が凍るとどうなりますか？", "answer": "氷になります。" },
+                    { "question": "池や川にいる魚の体は、何で覆われていますか？", "answer": "うろこです。" }
+                ],
+                "気温と天気の変化": [
+                    { "question": "太陽が雲に隠れると、気温はどうなりますか？", "answer": "下がります。" },
+                    { "question": "寒い日に息を吐くと白くなるのはなぜですか？", "answer": "息に含まれている水蒸気が冷やされて、小さな水のつぶになるからです。" }
+                ],
+                "植物の育ち方": [
+                    { "question": "植物が育つために必要な3つの要素は何ですか？", "answer": "水、空気、光" },
+                    { "question": "植物が成長するために、根っこはどのような役割をしますか？", "answer": "土の中から水や養分を吸い上げます。" }
+                ],
+                "昆虫のからだ": [
+                    { "question": "昆虫の体は、頭、胸、おしりの3つに分かれていますか？", "answer": "はい" },
+                    { "question": "昆虫の体は、頭、胸、腹の3つの部分に分かれていますか？", "answer": "はい。" }
+                ],
+                "磁石の性質": [
+                    { "question": "磁石のN極とS極を近づけるとどうなりますか？", "answer": "引き合います。" },
+                    { "question": "磁石にくっつくのは、主にどんな金属ですか？", "answer": "鉄やニッケル、コバルトなどです。" }
+                ],
+                "気象と気候": [
+                    { "question": "天気と気候の違いは何ですか？", "answer": "天気はある一日の大気の状態を指しますが、気候は長期間にわたる天気の平均的な状態を指します。" },
+                    { "question": "台風はどこで発生しますか？", "answer": "熱帯の海" }
+                ],
+                "星座と天体": [
+                    { "question": "夏の夜空に見える、大きな星座を一つ挙げなさい。", "answer": "夏の大三角（ベガ、アルタイル、デネブ）や、さそり座などです。" }
+                ],
+                "電気": [
+                    { "question": "豆電球を光らせるには、電池のプラス極とマイナス極をどのように繋げばいいですか？", "answer": "回路が途切れないように、両方の極に電線をつなぎます。" }
+                ],
+                "物の溶け方": [
+                    { "question": "砂糖を水に入れると溶けますが、溶けている砂糖はどこにありますか？", "answer": "水の中に溶け込んで、目に見えなくなっています。" }
+                ],
+                "電流と電圧": [
+                    { "question": "乾電池を直列につなぐと、電圧はどうなりますか？", "answer": "高くなります。" }
+                ],
+                "人体": [
+                    { "question": "私たちが食べたものを消化して栄養を吸収する器官は何ですか？", "answer": "胃、腸などです。" }
+                ],
+                "太陽系": [
+                    { "question": "太陽系の惑星で、地球のすぐ外側を回っている惑星は何ですか？", "answer": "火星です。" }
+                ],
+                "天体と季節": [
+                    { "question": "夏は冬よりも昼間の時間が長いのは、なぜですか？", "answer": "地球の地軸が傾いているため、夏は太陽の光が当たる時間が長くなるからです。" }
+                ],
+
+                
+                // 社会
+                "家族や学校": [
+                    { "question": "家族が協力して家事を分担することは大切ですか？", "answer": "はい" }
+                ],
+                "公共の場所": [
+                    { "question": "多くの人が利用する、図書館や病院のような場所を何と呼びますか？", "answer": "公共施設" }
+                ],
+                "日本の行事": [
+                    { "question": "七夕は、毎年何月何日に行われますか？", "answer": "7月7日" }
+                ],
+                "学校のまわり": [
+                    { "question": "通学路で、車が通る場所を何と呼びますか？", "answer": "車道" },
+                    { "question": "学校の周りにある公共施設を一つ挙げなさい。", "answer": "交番、病院、図書館など" }
+                ],
+                "地域の様子": [
+                    { "question": "地域の消防署や警察署は、どのような役割を担っていますか？", "answer": "私たちの安全や暮らしを守る役割です。" },
+                    { "question": "商店街やスーパーマーケットなど、お店が集まる地域を何と呼びますか？", "answer": "商業地域" }
+                ],
+                "日本の地形": [
+                    { "question": "日本の国土の約7割を占めているのは何ですか？", "answer": "山地" },
+                    { "question": "川が流れていて、周りが山に囲まれている平らな場所を何と言いますか？", "answer": "盆地です。" }
+                ],
+                "食料生産": [
+                    { "question": "日本で最も多く作られているお米は、夏の時期に収穫されますか？", "answer": "はい" }
+                ],
+                "工業": [
+                    { "question": "工場で自動車を作ることを何と言いますか？", "answer": "工業生産" },
+                    { "question": "工場で製品を作るための原料を何と言いますか？", "answer": "原材料です。" }
+                ],
+                "都道府県": [
+                    { "question": "日本には全部でいくつの都道府県がありますか？", "answer": "47です。" },
+                    { "question": "日本で一番面積が広い都道府県はどこですか？", "answer": "北海道です。" }
+                ],
+                "産業": [
+                    { "question": "畑で野菜を作ったり、家畜を育てたりする仕事を何と言いますか？", "answer": "農業です。" }
+                ],
+                "日本の歴史": [
+                    { "question": "大化の改新を行った人物は誰ですか？", "answer": "中大兄皇子（後の天智天皇）と中臣鎌足です。" },
+                    { "question": "鎌倉時代に成立した武士の法律は何ですか？", "answer": "御成敗式目です。" },
+                    { "question": "応仁の乱をきっかけに始まった、戦国時代の始まりを告げる出来事は何ですか？", "answer": "応仁の乱" },
+                    { "question": "織田信長が鉄砲を効果的に使った戦いで、有名なものを一つ挙げなさい。", "answer": "長篠の戦いです。" },
+                    { "question": "江戸時代に、鎖国政策を終わらせるきっかけとなった外国の船は、どの国の船でしたか？", "answer": "アメリカです。" },
+                    { "question": "明治維新後、身分制度を廃止した政策は何ですか？", "answer": "四民平等です。" },
+                    { "question": "日清戦争と日露戦争で、日本が勝利したことは、世界にどのような影響を与えましたか？", "answer": "日本が近代的な軍事力を持つ国として認められるきっかけになりました。" },
+                    { "question": "大正時代に広がった、国民の政治参加を求める動きを何と言いますか？", "answer": "大正デモクラシーです。" },
+                    { "question": "第二次世界大戦後、日本国憲法が制定されましたが、その三大原則を答えなさい。", "answer": "国民主権、基本的人権の尊重、平和主義です。" },
+                    { "question": "戦後、日本経済が急速に成長した時期を何と呼びますか？", "answer": "高度経済成長期です。" }
+                ],
+                "政治と国際関係": [
+                    { "question": "国会は、法律を作るための最も重要な機関ですが、その仕事は何ですか？", "answer": "法律を作ったり、政府の仕事をチェックしたりすることです。" },
+                    { "question": "日本の憲法は、国民のどんな権利を保障していますか？", "answer": "言論の自由や信教の自由、人権などです。" },
+                    { "question": "国際連合（UN）の主な目的は何ですか？", "answer": "世界の平和と安全を維持することです。" },
+                    { "question": "日本が加盟している国際機関を一つ挙げなさい。", "answer": "国際連合（UN）、世界保健機関（WHO）、国際通貨基金（IMF）など" },
+                    { "question": "日本の政治の仕組みは、どのようなものですか？", "answer": "国会、内閣、裁判所の三権分立です。" },
+                    { "question": "消費者が商品やサービスを購入する権利を守る法律を何と言いますか？", "answer": "消費者保護法" },
+                    { "question": "地球温暖化を解決するために、国際的に取り組んでいることを一つ挙げなさい。", "answer": "二酸化炭素の排出量を減らすための協定（パリ協定など）を結んでいることです。" },
+                    { "question": "世界的に問題となっている貧困や飢餓を解決するために、私たちができることは何ですか？", "answer": "募金やボランティア活動に参加すること、フェアトレード商品を購入することなどです。" },
+                    { "question": "日本が他国と結ぶ「条約」は、どのような役割を果たしますか？", "answer": "貿易や安全保障など、国と国の間でルールを定める役割です。" },
+                    { "question": "日本が平和主義を掲げているのは、なぜですか？", "answer": "過去の戦争の反省から、二度と戦争をしないという決意を表しているからです。" }
+                ],
+                "経済": [
+                    { "question": "商品やサービスを生産する会社を何と呼びますか？", "answer": "企業" },
+                    { "question": "私たちの生活を支えている、電気やガス、水道などのことを何と言いますか？", "answer": "インフラストラクチャー（社会基盤）" },
+                    { "question": "会社が商品を生産するために、土地や建物、機械などを購入しますが、これらを何と呼びますか？", "answer": "資本" },
+                    { "question": "お金を銀行に預けることを何と言いますか？", "answer": "貯蓄" },
+                    { "question": "日本円とアメリカドルを交換する市場を何と呼びますか？", "answer": "外国為替市場" },
+                    { "question": "商品の値段が全体的に上がり続けることを何と言いますか？", "answer": "インフレーション（インフレ）" },
+                    { "question": "商品の値段が全体的に下がり続けることを何と言いますか？", "answer": "デフレーション（デフレ）" },
+                    { "question": "国が税金を集め、公共事業などに使うことを何と言いますか？", "answer": "財政" },
+                    { "question": "国が経済を安定させるために、お金の量を調整することを何と言いますか？", "answer": "金融政策" },
+                    { "question": "日本が主に輸出しているものを一つ挙げなさい。", "answer": "自動車、電子部品、機械など" }
+                ],
+                "国際関係": [
+                    { "question": "日本が海外の国と貿易を行うことを何と言いますか？", "answer": "国際貿易" },
+                    { "question": "日本の食料自給率は、他の先進国と比べて高いですか、低いですか？", "answer": "低い" }
+                ],
+                 "かん字の学習": [
+                    {"question": "「山」という漢字の読み方を答えなさい。", "answer": "やま、サン"},
+                    {"question": "「林」という漢字を使い、文を作りなさい。", "answer": "私は森の近くに住んでいます。"},
+                    {"question": "「花」という漢字の読み方を答えなさい。", "answer": "はな、カ"},
+                    {"question": "「草」という漢字を使って、「〜〜が生える」という文を完成させなさい。", "answer": "草が生える"},
+                    {"question": "「川」という漢字を使って、文を作りなさい。", "answer": "川で泳ぎました。"},
+                    {"question": "「田」という漢字を使って、文を作りなさい。", "answer": "田んぼでお米を育てます。"},
+                    {"question": "「日」という漢字の読み方を答えなさい。", "answer": "ひ、に、ニチ"},
+                    {"question": "「月」という漢字を使って、文を作りなさい。", "answer": "夜空に月が出ました。"},
+                    {"question": "「犬」という漢字を使って、文を作りなさい。", "answer": "私の家には犬がいます。"},
+                    {"question": "「猫」という漢字の読み方を答えなさい。", "answer": "ねこ、ビョウ"}
+                ]
+            }
+        };
+        // ページの状態を管理する
+        let currentPage = 'main-page';
+        let previousPage = null;
+        let currentUnitName = null;
+
+        // ページを切り替える関数
+        function showPage(pageId, contentData = null) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+
+            if (contentData) {
+                renderContent(pageId, contentData);
+            }
+            previousPage = currentPage;
+            currentPage = pageId;
+        }
+
+        // コンテンツをレンダリングする関数
+        function renderContent(pageId, data) {
+            const targetPage = document.getElementById(pageId);
+            let html = '';
+
+            // ページヘッダー（戻るボタンとタイトル）
+            let backButtonText = '&lt; メインページに戻る';
+            let backButtonTarget = 'main-page';
+            if (pageId === 'unit_details_page') {
+                backButtonText = '&lt; 単元リストに戻る';
+                backButtonTarget = 'unit_list_page'; // ダミーの戻る先
+            }
+            html += `<div class="mb-8">
+                        <button data-back-link="${backButtonTarget}" class="back-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+                            ${backButtonText}
+                        </button>
+                    </div>`;
+            html += `<h2 class="text-3xl font-bold text-gray-700 mb-6">${data.title}</h2>`;
+
+            // コンテンツ本体
+            html += `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">`;
+            
+            if (pageId.includes('_grade_')) {
+                // 単元リストの表示
+                data.units.forEach(unit => {
+                    html += `
+                        <div data-page-link="unit_details_page" data-unit-name="${unit}" class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h4 class="text-xl font-bold mb-2">${unit}</h4>
+                        </div>
+                    `;
+                });
+            } else if (pageId === 'unit_details_page') {
+                // 例題の表示
+                if (data.examples && data.examples.length > 0) {
+                    data.examples.forEach((item, index) => {
+                        html += `
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                                <h4 class="text-xl font-bold mb-4">例題 ${index + 1}</h4>
+                                <p class="text-gray-700 mb-4">${item.question}</p>
+                                <button class="toggle-answer bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105" data-answer-id="answer-${index}">
+                                    解答を見る
+                                </button>
+                                <div id="answer-${index}" class="answer-box mt-4 p-4 rounded-lg bg-gray-100 hidden">
+                                    <p class="font-bold">解答:</p>
+                                    <p>${item.answer}</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    html += `<p class="text-gray-600">この単元の例題はまだ準備されていません。</p>`;
+                }
+            }
+
+            html += `</div>`;
+            targetPage.innerHTML = html;
+        }
+
+        // イベントリスナー
+        document.addEventListener('DOMContentLoaded', () => {
+            const appContainer = document.getElementById('app-container');
+
+            appContainer.addEventListener('click', (event) => {
+                const linkElement = event.target.closest('[data-page-link]');
+                const backButton = event.target.closest('[data-back-link]');
+                const toggleAnswerButton = event.target.closest('.toggle-answer');
+
+                if (linkElement) {
+                    const targetPageId = linkElement.dataset.pageLink;
+                    let contentData = null;
+
+                    if (curriculumData[targetPageId]) {
+                        // 教科ページへの遷移
+                        contentData = {
+                            title: linkElement.querySelector('h3').textContent,
+                            units: curriculumData[targetPageId].units
+                        };
+                        showPage(targetPageId, contentData);
+                    } else if (targetPageId === "unit_details_page") {
+                        // 単元詳細ページへの遷移
+                        const unitName = linkElement.dataset.unitName;
+                        if (unitName) {
+                            currentUnitName = unitName;
+                            const examples = curriculumData.example_questions[unitName] || [];
+                            contentData = { title: unitName, examples: examples };
+                            showPage(targetPageId, contentData);
+                        }
+                    }
+                } else if (backButton) {
+                    if (backButton.dataset.backLink === 'main-page') {
+                        showPage('main-page');
+                    } else {
+                        // 単元リストページに戻る
+                        const gradeSubjectId = Object.keys(curriculumData).find(key => 
+                            curriculumData[key].units && curriculumData[key].units.includes(currentUnitName)
+                        );
+                        if (gradeSubjectId) {
+                            showPage(gradeSubjectId, curriculumData[gradeSubjectId]);
+                        } else {
+                            showPage('main-page');
+                        }
+                    }
+                } else if (toggleAnswerButton) {
+                    const answerId = toggleAnswerButton.dataset.answerId;
+                    const answerBox = document.getElementById(answerId);
+                    if (answerBox) {
+                        answerBox.classList.toggle('hidden');
+                        toggleAnswerButton.textContent = answerBox.classList.contains('hidden') ? '解答を見る' : '解答を隠す';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
