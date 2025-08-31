@@ -8,15 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6;
-            /* Add background image */
             background-image: url('https://images.unsplash.com/photo-1549490349-86433628d18e?fit=crop&w=1920&h=1080&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect */
+            background-attachment: fixed;
         }
         .page {
             display: none;
@@ -24,7 +24,6 @@
         .page.active {
             display: block;
         }
-        /* Add a semi-transparent overlay to the main content area */
         #app-container {
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
@@ -32,7 +31,6 @@
             border-radius: 1.5rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        /* Style for the back button */
         .back-button {
             transition: all 0.3s ease;
         }
@@ -63,13 +61,9 @@
                             <h3 class="text-2xl font-bold mb-2">国語</h3>
                             <p class="text-sm opacity-90">ひらがな、カタカナ、漢字</p>
                         </div>
-                        <div data-page-link="1st_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                            <h3 class="text-2xl font-bold mb-2">理科</h3>
-                            <p class="text-sm opacity-90">身の回りの自然、生き物</p>
-                        </div>
-                        <div data-page-link="1st_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                            <h3 class="text-2xl font-bold mb-2">社会</h3>
-                            <p class="text-sm opacity-90">学校生活、行事</p>
+                        <div data-page-link="1st_grade_life" class="bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">生活</h3>
+                            <p class="text-sm opacity-90">学校ってどんなところ？</p>
                         </div>
                     </div>
                 </div>
@@ -86,13 +80,9 @@
                             <h3 class="text-2xl font-bold mb-2">国語</h3>
                             <p class="text-sm opacity-90">音読、読解、短い作文</p>
                         </div>
-                        <div data-page-link="2nd_grade_science" class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                            <h3 class="text-2xl font-bold mb-2">理科</h3>
-                            <p class="text-sm opacity-90">季節と生き物、天気</p>
-                        </div>
-                        <div data-page-link="2nd_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                            <h3 class="text-2xl font-bold mb-2">社会</h3>
-                            <p class="text-sm opacity-90">町の様子、公共施設</p>
+                        <div data-page-link="2nd_grade_life" class="bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <h3 class="text-2xl font-bold mb-2">生活</h3>
+                            <p class="text-sm opacity-90">私たちの住む町</p>
                         </div>
                     </div>
                 </div>
@@ -115,7 +105,7 @@
                         </div>
                         <div data-page-link="3rd_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
                             <h3 class="text-2xl font-bold mb-2">社会</h3>
-                            <p class="text-sm opacity-90">市区町村、農産物</p>
+                            <p class="text-sm opacity-90">町の様子、農産物</p>
                         </div>
                     </div>
                 </div>
@@ -184,7 +174,7 @@
                         </div>
                         <div data-page-link="6th_grade_social_studies" class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
                             <h3 class="text-2xl font-bold mb-2">社会</h3>
-                            <p class="text-sm opacity-90">歴史、政治、国際関係</p>
+                            <p class="text-sm opacity-90">日本の歴史、政治、国際関係、経済</p>
                         </div>
                     </div>
                 </div>
@@ -194,12 +184,10 @@
         <!-- 各学年・教科の詳細ページ (JavaScriptで表示/非表示を切り替え) -->
         <div id="1st_grade_math" class="page"></div>
         <div id="1st_grade_japanese" class="page"></div>
-        <div id="1st_grade_science" class="page"></div>
-        <div id="1st_grade_social_studies" class="page"></div>
+        <div id="1st_grade_life" class="page"></div>
         <div id="2nd_grade_math" class="page"></div>
         <div id="2nd_grade_japanese" class="page"></div>
-        <div id="2nd_grade_science" class="page"></div>
-        <div id="2nd_grade_social_studies" class="page"></div>
+        <div id="2nd_grade_life" class="page"></div>
         <div id="3rd_grade_math" class="page"></div>
         <div id="3rd_grade_japanese" class="page"></div>
         <div id="3rd_grade_science" class="page"></div>
@@ -226,235 +214,253 @@
         // すべてのカリキュラムデータを保持するオブジェクト
         const curriculumData = {
             "1st_grade_math": { title: "小学1年生 算数", units: ["大きな数と小さな数", "たし算とひき算", "とけい", "かたちあそび"] },
-            "1st_grade_japanese": { title: "小学1年生 国語", units: ["ひらがな・カタカナの読み書き", "かん字の学習", "文しょうの読解"] },
-            "1st_grade_science": { title: "小学1年生 理科", units: ["植物の観察", "昆虫の生活", "季節と天気"] },
-            "1st_grade_social_studies": { title: "小学1年生 社会", units: ["家族や学校", "公共の場所", "日本の行事"] },
+            "1st_grade_japanese": { title: "小学1年生 国語", units: ["ひらがな・カタカナの読み書き", "かん字の学習", "気持ちをあらわす言葉", "文章の読解"] },
+            "1st_grade_life": { title: "小学1年生 生活", units: ["学校ってどんなところ？", "がっこうのまわりをたんけん"] },
             "2nd_grade_math": { title: "小学2年生 算数", units: ["九九", "たし算・ひき算の筆算", "長さと水のかさ", "図形"] },
-            "2nd_grade_japanese": { title: "小学2年生 国語", units: ["漢字学習", "文章の読解", "説明文と物語文"] },
-            "2nd_grade_science": { title: "小学2年生 理科", units: ["生き物と季節", "身近な自然", "気温と天気の変化"] },
-            "2nd_grade_social_studies": { title: "小学2年生 社会", units: ["学校のまわり", "地域の様子", "公共施設"] },
+            "2nd_grade_japanese": { title: "小学2年生 国語", units: ["漢字学習", "文章問題", "ことわざ"] },
+            "2nd_grade_life": { title: "小学2年生 生活", units: ["私たちの住む町", "季節と生き物"] },
             "3rd_grade_math": { title: "小学3年生 算数", units: ["わり算", "小数と分数", "図形の面積"] },
             "3rd_grade_japanese": { title: "小学3年生 国語", units: ["物語文の読解", "随筆の読解", "文法", "漢字学習"] },
             "3rd_grade_science": { title: "小学3年生 理科", units: ["植物の育ち方", "昆虫のからだ", "磁石の性質"] },
             "3rd_grade_social_studies": { title: "小学3年生 社会", units: ["日本の地形", "都道府県", "産業"] },
-            "4th_grade_math": { title: "小学4年生 算数", units: ["面積", "概数", "直方体", "速さ"] },
-            "4th_grade_japanese": { title: "小学4年生 国語", units: ["物語の主題", "説明文の読解", "文法と語彙", "漢字学習"] },
-            "4th_grade_science": { title: "小学4年生 理科", units: ["星座と天体", "電気", "物の溶け方"] },
-            "4th_grade_social_studies": { title: "小学4年生 社会", units: ["日本の地形", "食料生産", "工業"] },
-            "5th_grade_math": { title: "小学5年生 算数", units: ["割合", "速さ", "グラフ", "平均と中央値"] },
-            "5th_grade_japanese": { title: "小学5年生 国語", units: ["文学史", "随筆の読解", "古典", "漢字学習"] },
-            "5th_grade_science": { title: "小学5年生 理科", units: ["電流と電圧", "気象と気候", "人体"] },
+            "4th_grade_math": { title: "小学4年生 算数", units: ["面積、概数、直方体、速さ"] },
+            "4th_grade_japanese": { title: "小学4年生 国語", units: ["物語の主題、説明文の読解、文法と語彙、漢字学習"] },
+            "4th_grade_science": { title: "小学4年生 理科", units: ["電気、星座、天体"] },
+            "4th_grade_social_studies": { title: "小学4年生 社会", units: ["都道府県、地形、食料生産、工業"] },
+            "5th_grade_math": { title: "小学5年生 算数", units: ["割合、速さ、グラフ、平均と中央値"] },
+            "5th_grade_japanese": { title: "小学5年生 国語", units: ["随筆、説明文の読解"] },
+            "5th_grade_science": { title: "小学5年生 理科", units: ["電流、気象、人体"] },
             "5th_grade_social_studies": { title: "小学5年生 社会", units: ["日本の産業、貿易"] },
-            "6th_grade_math": { title: "小学6年生 算数", units: ["比", "場合の数", "確率", "速さと道のり"] },
-            "6th_grade_japanese": { title: "小学6年生 国語", units: ["文学史", "論説文の読解", "文法と語彙", "漢字学習"] },
+            "6th_grade_math": { title: "小学6年生 算数", units: ["比、場合の数、速さ"] },
+            "6th_grade_japanese": { title: "小学6年生 国語", units: ["文学史、古典、論説文"] },
             "6th_grade_science": { title: "小学6年生 理科", units: ["てこ、滑車、太陽系"] },
-            "6th_grade_social_studies": { title: "小学6年生 社会", units: ["日本の歴史", "政治と国際関係", "経済"] },
+            "6th_grade_social_studies": { title: "小学6年生 社会", units: ["日本の歴史、政治、国際関係、経済"] },
             
             // 例題データ
             "example_questions": {
                 // 算数
                 "大きな数と小さな数": [
-                    { "question": "100より10大きい数は？", "answer": "110" },
-                    { "question": "1000から100を引くと？", "answer": "900" }
+                    { "question": "1. 10より3大きい数はいくつですか？", "answer": "13" },
+                    { "question": "2. 18より5小さい数はいくつですか？", "answer": "13" },
+                    { "question": "3. 10が3つと、1が7つでいくつですか？", "answer": "37" },
+                    { "question": "4. 50は10がいくつ集まった数ですか？", "answer": "5つ" },
+                    { "question": "5. 98の次の数はいくつですか？", "answer": "99" },
+                    { "question": "6. 35と42、大きいほうの数はどちらですか？", "answer": "42" },
+                    { "question": "7. 29の前の数はいくつですか？", "answer": "28" },
+                    { "question": "8. 60は10が6つ集まった数です。では、10が10個集まるといくつですか？", "answer": "100" },
+                    { "question": "9. 77は10がいくつと1がいくつ集まった数ですか？", "answer": "10が7つと1が7つ" },
+                    { "question": "10. 99の次の数はいくつですか？", "answer": "100" }
                 ],
                 "たし算とひき算": [
-                    { "question": "25 + 38 = ?", "answer": "63" },
-                    { "question": "100 - 45 = ?", "answer": "55" }
+                    { "question": "1. 3 + 2 = ?", "answer": "5" },
+                    { "question": "2. 5 + 4 = ?", "answer": "9" },
+                    { "question": "3. 8 - 3 = ?", "answer": "5" },
+                    { "question": "4. 10 - 6 = ?", "answer": "4" },
+                    { "question": "5. 7 + 0 = ?", "answer": "7" },
+                    { "question": "6. 9 - 9 = ?", "answer": "0" },
+                    { "question": "7. 6 + 4 = ?", "answer": "10" },
+                    { "question": "8. 10 - 2 = ?", "answer": "8" },
+                    { "question": "9. 5 + 5 = ?", "answer": "10" },
+                    { "question": "10. 8 - 1 = ?", "answer": "7" }
                 ],
                 "とけい": [
-                    { "question": "今から30分後、時計の長針はどこを指していますか？", "answer": "今が12時ちょうどなら、6を指しています。長針は1時間で1周します。" },
-                    { "question": "午前8時から午後3時までの時間（何時間）を計算しなさい。", "answer": "7時間" }
+                    { "question": "1. 短い針が3を、長い針が12を指しています。何時ですか？", "answer": "3時" },
+                    { "question": "2. 6時半を、長い針と短い針で表すと、それぞれどこを指しますか？", "answer": "短い針が6と7の間、長い針が6を指します。" },
+                    { "question": "3. 午前8時から午前10時までは、何時間ですか？", "answer": "2時間" },
+                    { "question": "4. 午後2時ちょうど、長い針はどこを指していますか？", "answer": "12" },
+                    { "question": "5. 9時15分、短い針はどこを指していますか？", "answer": "9より少し進んだところ" },
+                    { "question": "6. 1時間は何分ですか？", "answer": "60分" },
+                    { "question": "7. 1分は何秒ですか？", "answer": "60秒" },
+                    { "question": "8. 今が10時ちょうどです。30分後は何時ですか？", "answer": "10時30分" },
+                    { "question": "9. 午後4時は、午前と同じように数字で表すと、いくつですか？", "answer": "16" },
+                    { "question": "10. 今が7時です。短い針が8を指すまであと何時間ですか？", "answer": "1時間" }
                 ],
                 "かたちあそび": [
-                    { "question": "まる、さんかく、しかくの形をしたものを身の回りから1つずつ見つけてください。", "answer": "まる：ボール、時計<br>さんかく：おにぎり、三角定規<br>しかく：本、テレビ" }
+                    { "question": "1. 辺が3つある図形を何と言いますか？", "answer": "さんかく" },
+                    { "question": "2. まるい形をしたものを、身の回りから一つ見つけてください。", "answer": "ボール、時計、みかんなど" },
+                    { "question": "3. 辺が4つあり、どの辺の長さも同じで、角が直角の図形を何と言いますか？", "answer": "正方形" },
+                    { "question": "4. 辺が4つあり、向かい合った辺の長さが同じで、角が直角の図形を何と言いますか？", "answer": "長方形" },
+                    { "question": "5. とても薄くて平らな形を、算数の言葉で何と言いますか？", "answer": "平面" },
+                    { "question": "6. 箱のような、かたまりの形を何と言いますか？", "answer": "立体" },
+                    { "question": "7. おにぎりは、どんな形に似ていますか？", "answer": "さんかく" },
+                    { "question": "8. ボールは、どんな形に似ていますか？", "answer": "まる" },
+                    { "question": "9. ブロックのように、辺と角がある形を何と言いますか？", "answer": "直方体や立方体" },
+                    { "question": "10. 形を並べて、家を作ってみましょう。どの形を使いましたか？", "answer": "さんかく、しかく、長方形など" }
                 ],
                 "九九": [
-                    { "question": "5 × 7 = ?", "answer": "35" },
-                    { "question": "45 ÷ 5 = ?", "answer": "9" }
+                    { "question": "1. 2 × 5 = ?", "answer": "10" },
+                    { "question": "2. 7 × 8 = ?", "answer": "56" },
+                    { "question": "3. 9 × 3 = ?", "answer": "27" },
+                    { "question": "4. 4 × 6 = ?", "answer": "24" },
+                    { "question": "5. 8 × 9 = ?", "answer": "72" },
+                    { "question": "6. 3 × 7 = ?", "answer": "21" },
+                    { "question": "7. 5 × 5 = ?", "answer": "25" },
+                    { "question": "8. 6 × 1 = ?", "answer": "6" },
+                    { "question": "9. 1 × 10 = ?", "answer": "10" },
+                    { "question": "10. 9 × 9 = ?", "answer": "81" }
                 ],
                 "たし算・ひき算の筆算": [
-                    { "question": "123 + 456 = ?", "answer": "579" },
-                    { "question": "987 - 654 = ?", "answer": "333" }
+                    { "question": "1. 15 + 28 = ?", "answer": "43" },
+                    { "question": "2. 34 + 59 = ?", "answer": "93" },
+                    { "question": "3. 72 - 45 = ?", "answer": "27" },
+                    { "question": "4. 80 - 36 = ?", "answer": "44" },
+                    { "question": "5. 100 - 58 = ?", "answer": "42" },
+                    { "question": "6. 23 + 47 = ?", "answer": "70" },
+                    { "question": "7. 91 - 19 = ?", "answer": "72" },
+                    { "question": "8. 35 + 65 = ?", "answer": "100" },
+                    { "question": "9. 48 + 39 = ?", "answer": "87" },
+                    { "question": "10. 63 - 27 = ?", "answer": "36" }
                 ],
                 "長さと水のかさ": [
-                    { "question": "1メートルは何センチメートルですか？", "answer": "100センチメートル" },
-                    { "question": "1リットルは何ミリリットルですか？", "answer": "1000ミリリットル" }
+                    { "question": "1. 1mは何cmですか？", "answer": "100cm" },
+                    { "question": "2. 30cmと50cmを合わせると、何cmですか？", "answer": "80cm" },
+                    { "question": "3. 1m20cmは何cmですか？", "answer": "120cm" },
+                    { "question": "4. 2Lは何dLですか？", "answer": "20dL" },
+                    { "question": "5. 5dLは何mLですか？", "answer": "500mL" },
+                    { "question": "6. 1Lと500mLを合わせると、何mLですか？", "answer": "1500mL" },
+                    { "question": "7. 80cmから25cmを引くと、何cmですか？", "answer": "55cm" },
+                    { "question": "8. 500mLのジュースを2回飲むと、合計何mLになりますか？", "answer": "1000mL" },
+                    { "question": "9. 1m5cmは何cmですか？", "answer": "105cm" },
+                    { "question": "10. 1Lのジュースを200mLずつコップに入れると、何人分になりますか？", "answer": "5人分" }
                 ],
                 "図形": [
-                    { "question": "辺が4本あり、角が4つある図形を何と言いますか？", "answer": "四角形" }
-                ],
-                "わり算": [
-                    { "question": "24 ÷ 3 = ?", "answer": "8" },
-                    { "question": "45 ÷ 9 = ?", "answer": "5" }
-                ],
-                "小数と分数": [
-                    { "question": "0.5を分数で表しなさい。", "answer": "$$ \\frac{1}{2} $$" },
-                    { "question": "$$ \\frac{1}{4} $$を小数で表しなさい。", "answer": "0.25" }
-                ],
-                "図形の面積": [
-                    { "question": "縦3cm、横4cmの長方形の面積は？", "answer": "12$$ \\text{cm}^2 $$" },
-                    { "question": "底辺が10cm、高さが6cmの三角形の面積は？", "answer": "30$$ \\text{cm}^2 $$" }
-                ],
-                "面積": [
-                    { "question": "縦5cm、横8cmの長方形の面積は？", "answer": "40$$ \\text{cm}^2 $$" },
-                    { "question": "1辺が6cmの正方形の面積は？", "answer": "36$$ \\text{cm}^2 $$" }
-                ],
-                "概数": [
-                    { "question": "258を十の位で四捨五入しなさい。", "answer": "260" }
-                ],
-                "直方体": [
-                    { "question": "縦2cm、横3cm、高さ4cmの直方体の体積は？", "answer": "24$$ \\text{cm}^3 $$" }
-                ],
-                "速さ": [
-                    { "question": "時速60kmで2時間進むと何km？", "answer": "120km" },
-                    { "question": "10kmを5時間で歩くと時速何km？", "answer": "2km" }
-                ],
-                "割合": [
-                    { "question": "300円の20%はいくらですか？", "answer": "60円" }
-                ],
-                "グラフ": [
-                    { "question": "あるクラスの生徒の好きなスポーツを調べたところ、サッカーが10人、バスケが8人、野球が6人でした。これをグラフで表すには、どのようなグラフが適していますか？", "answer": "棒グラフや円グラフが適しています。" }
-                ],
-                "平均と中央値": [
-                    { "question": "点数が50点、60点、70点の3人の平均点は何点ですか？", "answer": "60点" },
-                    { "question": "5人（点数：80, 75, 90, 60, 85）のテストの点数の中央値を求めなさい。", "answer": "点数を小さい順に並べると 60, 75, 80, 85, 90 なので、真ん中の値である 80点 が中央値です。" }
-                ],
-                "比": [
-                    { "question": "AとBの比が2:3で、Aが10の場合、Bはいくつですか？", "answer": "15" },
-                    { "question": "水150mLとジュース50mLを混ぜたときの比を最も簡単な整数の比で表しなさい。", "answer": "3:1" }
-                ],
-                "場合の数": [
-                    { "question": "A, B, Cの3人から2人を選ぶときの組み合わせは何通りありますか？", "answer": "3通り（AとB、AとC、BとC）" }
-                ],
-                "確率": [
-                    { "question": "さいころを1回振って、奇数の目が出る確率は？", "answer": "$$ \\frac{3}{6} = \\frac{1}{2} $$" }
-                ],
-                "てこと滑車": [
-                    { "question": "てこの原理を応用している道具を一つ挙げなさい。", "answer": "ハサミ、ペンチ、栓抜きなど" },
-                    { "question": "滑車を使って重い荷物を持ち上げるとき、力の向きを変えることができるのはなぜですか？", "answer": "ロープを下に引くことで、荷物を上に上げることができるからです。" }
+                    { "question": "1. 辺が3つある図形を何と言いますか？", "answer": "三角形" },
+                    { "question": "2. 正方形には、辺がいくつありますか？", "answer": "4つ" },
+                    { "question": "3. 三角形には、角がいくつありますか？", "answer": "3つ" },
+                    { "question": "4. まるい形をした図形を何と言いますか？", "answer": "円" },
+                    { "question": "5. 辺の長さがすべて同じで、角がすべて直角の四角形を何と言いますか？", "answer": "正方形" },
+                    { "question": "6. 縦の辺と横の辺の長さが違う長方形を何と言いますか？", "answer": "長方形" },
+                    { "question": "7. 辺が5つある図形を何と言いますか？", "answer": "五角形" },
+                    { "question": "8. さいころは、どのような形をしていますか？", "answer": "立方体" },
+                    { "question": "9. かたちは、おもに辺の数で名前が変わりますか？", "answer": "はい" },
+                    { "question": "10. 円には、辺と角はありますか？", "answer": "いいえ" }
                 ],
                 
                 // 国語
                 "ひらがな・カタカナの読み書き": [
-                    { "question": "「いぬ」をカタカナで書きなさい。", "answer": "イヌ" }
+                    { "question": "「いぬ」をカタカナで書きなさい。", "answer": "イヌ" },
+                    { "question": "「りんご」をカタカナで書きなさい。", "answer": "リンゴ" },
+                    { "question": "「トマト」をひらがなで書きなさい。", "answer": "とまと" },
+                    { "question": "「おひさま」をひらがなで書きなさい。", "answer": "おひさま" },
+                    { "question": "「テレビ」をひらがなで書きなさい。", "answer": "てれび" },
+                    { "question": "「かさ」をカタカナで書きなさい。", "answer": "カサ" },
+                    { "question": "「くるま」をカタカナで書きなさい。", "answer": "クルマ" },
+                    { "question": "「みかん」をカタカナで書きなさい。", "answer": "ミカン" },
+                    { "question": "「えんぴつ」をカタカナで書きなさい。", "answer": "エンピツ" },
+                    { "question": "「さかな」をカタカナで書きなさい。", "answer": "サカナ" }
                 ],
                 "かん字の学習": [
                     { "question": "「山」という漢字の読み方を答えなさい。", "answer": "やま、サン" },
-                    { "question": "「林」という漢字を使い、文を作りなさい。", "answer": "私は森の近くに住んでいます。" },
+                    { "question": "「林」という漢字を使い、文を作りなさい。", "answer": "森の近くに住んでいます。" },
                     { "question": "「花」という漢字の読み方を答えなさい。", "answer": "はな、カ" },
-                    { "question": "「草」という漢字を使って、「〜〜が生える」という文を完成させなさい。", "answer": "草が生える" },
+                    { "question": "「草」の読み方を答えなさい。", "answer": "くさ、ソウ" },
                     { "question": "「川」という漢字を使って、文を作りなさい。", "answer": "川で泳ぎました。" },
                     { "question": "「田」という漢字を使って、文を作りなさい。", "answer": "田んぼでお米を育てます。" },
                     { "question": "「日」という漢字の読み方を答えなさい。", "answer": "ひ、に、ニチ" },
                     { "question": "「月」という漢字を使って、文を作りなさい。", "answer": "夜空に月が出ました。" },
                     { "question": "「犬」という漢字を使って、文を作りなさい。", "answer": "私の家には犬がいます。" },
-                    { "question": "「猫」という漢字の読み方を答えなさい。", "answer": "ねこ、ビョウ" }
+                    { "question": "「男」という漢字の読み方を答えなさい。", "answer": "おとこ、だん" }
                 ],
-                "文章の読解": [
-                    { "question": "物語文で、登場人物の気持ちを読み取るにはどうすれば良いですか？", "answer": "セリフや行動、表情などから推測します。" }
+                "気持ちをあらわす言葉": [
+                    { "question": "テストでいい点が取れるか不安で落ち着かない気持ちを表す言葉は？", "answer": "そわそわする" },
+                    { "question": "友達に意地悪をされて、心の中でぐっとこらえたときの気持ちを表す言葉は？", "answer": "くやしい" },
+                    { "question": "お母さんに怒られて、涙が出そうになったときの気持ちを表す言葉は？", "answer": "かなしい" },
+                    { "question": "夜中に一人でいるときに、心臓がドキドキする気持ちを表す言葉は？", "answer": "こわい" },
+                    { "question": "友達が約束を破って、少しイライラしたときの気持ちを表す言葉は？", "answer": "おこる" },
+                    { "question": "遠くに住んでいるおじいちゃんやおばあちゃんに会いたくなったときの気持ちを表す言葉は？", "answer": "さみしい" },
+                    { "question": "初めてのことに挑戦して、少し不安な気持ちを表す言葉は？", "answer": "どきどきする" },
+                    { "question": "友達が困っているのを見て、手伝ってあげたくなったときの気持ちを表す言葉は？", "answer": "やさしい" },
+                    { "question": "自分のした失敗を反省して、心の中で「ごめんなさい」と思う気持ちを表す言葉は？", "answer": "はずかしい" },
+                    { "question": "たくさんの人に拍手をもらって、気分が良くなったときの気持ちを表す言葉は？", "answer": "きもちいい" }
                 ],
-                "説明文と物語文": [
-                    { "question": "説明文と物語文の違いは何ですか？", "answer": "説明文は物事を分かりやすく伝えるための文章で、物語文は出来事を語る文章です。" }
-                ],
-                "物語文の読解": [
-                    { "question": "登場人物が「とても悲しい顔をしていました」という記述から、どんな気持ちを読み取ることができますか？", "answer": "悲しい、辛い、落胆しているなど。" }
-                ],
-                "随筆の読解": [
-                    { "question": "随筆は、作者の何が書かれていることが多いですか？", "answer": "作者の考えや感じたこと、身の回りの出来事など。" },
-                    { "question": "随筆で、「なるほど、そうか」と作者が感じた場面から、作者が何を学んだのかを推測しなさい。", "answer": "新しい発見や気づきを得た、考え方が変わった" }
-                ],
-                "文法": [
-                    { "question": "「大きな犬」の「大きな」は、何詞ですか？", "answer": "形容詞" },
-                    { "question": "「走る」の活用形を一つ挙げなさい。", "answer": "走らない（未然形）、走ります（連用形）、走る（終止形）など" }
-                ],
-                "物語の主題": [
-                    { "question": "物語の「主題」とは何ですか？", "answer": "作者が伝えたい一番大切なメッセージやテーマです。" }
-                ],
-                "文法と語彙": [
-                    { "question": "主語と述語の関係を説明しなさい。", "answer": "誰が（何が）どうする、どうだ、何だ、ある、いる、という関係です。" }
-                ],
-                "文学史": [
-                    { "question": "夏目漱石の代表作を一つ挙げなさい。", "answer": "『吾輩は猫である』、『坊っちゃん』など" },
-                    { "question": "平安時代に書かれた女性による文学作品を一つ挙げなさい。", "answer": "『源氏物語』、『枕草子』" }
-                ],
-                "論説文の読解": [
-                    { "question": "論説文の結論は、どの部分に書かれていることが多いですか？", "answer": "文章の最後や冒頭、あるいは段落の最後に書かれていることが多いです。" },
-                    { "question": "論説文を要約する際のポイントは何ですか？", "answer": "筆者の主張と、その主張を支える根拠を抜き出すことです。" }
+                "文章問題": [
+                    { "question": "1. 太郎くんは、夏休みに海の家に行きました。そこでは、大きなスイカを割って食べました。太郎くんは、夏休みにどこに行きましたか？", "answer": "海の家" },
+                    { "question": "2. ゆみちゃんは、学校で育てたアサガオに毎日水をあげました。すると、きれいな紫色の花が咲きました。ゆみちゃんは何を育てましたか？", "answer": "アサガオ" },
+                    { "question": "3. けいとくんは、おばあちゃんから手作りのクッキーをもらいました。クッキーには、星と月の形をしたものが入っていました。けいとくんがもらったクッキーは、どんな形でしたか？", "answer": "星と月の形" },
+                    { "question": "4. ぼくは、朝早く起きて公園に行きました。公園には、朝顔が咲いていました。朝顔は、何時に咲く花ですか？", "answer": "朝" },
+                    { "question": "5. ともだちのたけしくんと公園で遊びました。たけしくんは、ブランコが好きです。ぼくは、すべり台が好きです。たけしくんが好きな遊具は何ですか？", "answer": "ブランコ" },
+                    { "question": "6. 家族で動物園に行きました。パンダは笹を食べていました。ゾウは水を飲んでいました。パンダは何を食べていましたか？", "answer": "笹" },
+                    { "question": "7. お買い物に行きました。メモには、たまご、牛乳、パンと書いてあります。お母さんから、まず牛乳を買ってきてと頼まれました。お母さんが一番最初に買ってきてほしいものは何ですか？", "answer": "牛乳" },
+                    { "question": "8. 雨が降った日の帰り道、大きな水たまりができていました。僕は水たまりを避けようとしましたが、ドボンと入ってしまいました。僕はどうなりましたか？", "answer": "水たまりに入った" },
+                    { "question": "9. ぼくのクラスの担任の先生は、いつも笑顔で優しいです。先生は、みんなに「おはよう」と元気にあいさつしてくれます。先生はどんな人ですか？", "answer": "いつも笑顔で優しい人" },
+                    { "question": "10. 妹が、クレヨンで紙にお絵かきを始めました。妹は、空を青いクレヨンで、雲を白いクレヨンでぬりました。妹が空を塗るために使ったクレヨンの色は何ですか？", "answer": "青" }
                 ],
                 "漢字学習": [
-                    { "question": "三年生で学習する「春」の読み方を答えなさい。", "answer": "はる" },
-                    { "question": "三年生で学習する「重」を使った熟語を一つ挙げなさい。", "answer": "重要、体重、重力など" },
-                    { "question": "三年生で学習する「考」を使った文を作りなさい。", "answer": "将来の夢を考える。" },
-                    { "question": "三年生で学習する「弱」の反対語を答えなさい。", "answer": "強" },
-                    { "question": "三年生で学習する「葉」を使った文を作りなさい。", "answer": "紅葉がきれいな季節だ。" },
-                    { "question": "三年生で学習する「光」を使った文を作りなさい。", "answer": "窓から光が差し込む。" },
-                    { "question": "三年生で学習する「風」を使った文を作りなさい。", "answer": "強い風が吹いている。" },
-                    { "question": "三年生で学習する「冬」を使った文を作りなさい。", "answer": "冬休みは雪で遊んだ。" },
-                    { "question": "三年生で学習する「温」を使った熟語を一つ挙げなさい。", "answer": "温暖、気温、温泉など" },
-                    { "question": "三年生で学習する「通」を使った文を作りなさい。", "answer": "毎日学校に通っている。" }
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "校", "answer": "こう" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "時", "answer": "じ" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "分", "answer": "ふん" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "聞", "answer": "きく" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "見", "answer": "みる" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "読", "answer": "よむ" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "話", "answer": "はなす" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "書", "answer": "かく" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "行", "answer": "いく" },
+                    { "question": "次の漢字の読み方をひらがなで答えなさい。", "sub_question": "来", "answer": "くる" }
                 ],
-                "4th_grade_japanese_kanji": [
-                    { "question": "四年生で学習する「他」の読み方を答えなさい。", "answer": "た" },
-                    { "question": "四年生で学習する「関」を使った熟語を一つ挙げなさい。", "answer": "関係、関心、関門など" },
-                    { "question": "四年生で学習する「境」を使った文を作りなさい。", "answer": "国境を越えて旅をする。" },
-                    { "question": "四年生で学習する「希」を使った熟語を一つ挙げなさい。", "answer": "希望、希少、希求など" },
-                    { "question": "四年生で学習する「姿」を使った文を作りなさい。", "answer": "遠くに友達の姿が見える。" },
-                    { "question": "四年生で学習する「続」を使った熟語を一つ挙げなさい。", "answer": "継続、連続、接続など" },
-                    { "question": "四年生で学習する「選」を使った文を作りなさい。", "answer": "好きな本を選ぶ。" },
-                    { "question": "四年生で学習する「確」を使った熟語を一つ挙げなさい。", "answer": "確認、確実、確かめるなど" },
-                    { "question": "四年生で学習する「絶」を使った熟語を一つ挙げなさい。", "answer": "絶対、絶望、絶滅など" },
-                    { "question": "四年生で学習する「団」を使った文を作りなさい。", "answer": "みんなで団結して頑張る。" }
+                "ことわざ": [
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「石の上にも（　　　）」", "answer": "三年" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「雨降って地（　　　）」", "answer": "固まる" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「（　　　）も木から落ちる」", "answer": "猿" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「急がば（　　　）」", "answer": "回れ" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「論より（　　　）」", "answer": "証拠" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「犬も（　　　）棒に当たる」", "answer": "歩けば" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「塵も（　　　）なれば山となる」", "answer": "積もれば" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「（　　　）より団子」", "answer": "花" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「百聞は（　　　）にしかず」", "answer": "一見" },
+                    { "question": "次のことわざの空欄にあてはまる言葉を答えなさい。\n\n「（　　　）狸の皮算用」", "answer": "捕らぬ" }
                 ],
-                "5th_grade_japanese_kanji": [
-                    { "question": "五年生で学習する「拡」の読み方を答えなさい。", "answer": "かく" },
-                    { "question": "五年生で学習する「潔」を使った熟語を一つ挙げなさい。", "answer": "清潔、簡潔、潔白など" },
-                    { "question": "五年生で学習する「承」を使った文を作りなさい。", "answer": "承諾の返事をする。" },
-                    { "question": "五年生で学習する「操」を使った文を作りなさい。", "answer": "機械を操作する。" },
-                    { "question": "五年生で学習する「競」を使った熟語を一つ挙げなさい。", "answer": "競争、競技、競り合うなど" },
-                    { "question": "五年生で学習する「極」を使った文を作りなさい。", "answer": "北極と南極。" },
-                    { "question": "五年生で学習する「献」を使った熟語を一つ挙げなさい。", "answer": "献立、貢献、献身など" },
-                    { "question": "五年生で学習する「厳」を使った文を作りなさい。", "answer": "厳重な注意を受ける。" },
-                    { "question": "五年生で学習する「庁」を使った熟語を一つ挙げなさい。", "answer": "県庁、官庁、気象庁など" },
-                    { "question": "五年生で学習する「挑」を使った文を作りなさい。", "answer": "難しい課題に挑戦する。" }
+
+                // 生活
+                "学校ってどんなところ？": [
+                    { "question": "1. 学校で困ったことがあったら、誰に相談するのがいいですか？\n\nA. お兄さん\nB. お母さん\nC. 先生", "answer": "C. 先生" },
+                    { "question": "2. 下駄箱では、どうやって自分の靴を見つけたらいいですか？\n\nA. 色の同じ靴を探す\nB. 名前が書いてある場所を探す\nC. 一番上の段を見る", "answer": "B. 名前が書いてある場所を探す" },
+                    { "question": "3. 授業中にお腹がすいてしまったら、どうすればいいですか？\n\nA. 先生に黙ってパンを食べる\nB. 授業が終わるまでがまんする\nC. 友だちにこっそりもらう", "answer": "B. 授業が終わるまでがまんする" },
+                    { "question": "4. 遊具の使い方がわからない時、どうしたらいいですか？\n\nA. 適当に使ってみる\nB. 友だちに聞く\nC. 先生に聞く", "answer": "C. 先生に聞く" },
+                    { "question": "5. 学校のトイレは、おうちのトイレと違うところがありますか？\n\nA. ありません\nB. あります\nC. わからない", "answer": "B. あります" },
+                    { "question": "6. 友だちと喧嘩してしまったら、まず何をしますか？\n\nA. 怒って家に帰る\nB. 相手を叩く\nC. ごめんなさいを言う", "answer": "C. ごめんなさいを言う" },
+                    { "question": "7. 学校で転んでしまったら、誰に助けを求めますか？\n\nA. 知らない人に\nB. 先生に\nC. 校長先生に", "answer": "B. 先生に" },
+                    { "question": "8. 給食の時間、食べきれなかったおかずはどうしますか？\n\nA. 残す\nB. 全部食べる\nC. 先生に相談する", "answer": "C. 先生に相談する" },
+                    { "question": "9. 朝、学校に行く前に準備するものは何ですか？\n\nA. ゲーム機\nB. 教科書、筆箱、ハンカチ\nC. お菓子", "answer": "B. 教科書、筆箱、ハンカチ" },
+                    { "question": "10. 友だちと仲良くするためには、どんなことが大切ですか？\n\nA. 全部自分の好きなようにする\nB. 相手の気持ちを考える\nC. 遊んであげない", "answer": "B. 相手の気持ちを考える" }
                 ],
-                "6th_grade_japanese_kanji": [
-                    { "question": "六年生で学習する「歓」の読み方を答えなさい。", "answer": "かん" },
-                    { "question": "六年生で学習する「揮」を使った熟語を一つ挙げなさい。", "answer": "指揮、発揮、指揮官など" },
-                    { "question": "六年生で学習する「契」を使った文を作りなさい。", "answer": "契約書にサインをする。" },
-                    { "question": "六年生で学習する「慶」を使った熟語を一つ挙げなさい。", "answer": "慶事、慶祝、慶賀など" },
-                    { "question": "六年生で学習する「轄」を使った文を作りなさい。", "answer": "警察官の管轄する地域。" },
-                    { "question": "六年生で学習する「衡」を使った熟語を一つ挙げなさい。", "answer": "均衡、平衡、天秤など" },
-                    { "question": "六年生で学習する「肯」を使った文を作りなさい。", "answer": "相手の意見を肯定する。" },
-                    { "question": "六年生で学習する「遣」を使った熟語を一つ挙げなさい。", "answer": "派遣、特使、遺憾など" },
-                    { "question": "六年生で学習する「唆」を使った熟語を一つ挙げなさい。", "answer": "教唆、唆すなど" },
-                    { "question": "六年生で学習する「誠」を使った文を作りなさい。", "answer": "誠実に仕事に取り組む。" }
+                "がっこうのまわりをたんけん": [
+                    { "question": "1. 信号の色が赤になったら、どうしますか？", "answer": "止まります。" },
+                    { "question": "2. 車が通る道で、歩く場所を何と言いますか？", "answer": "歩道" },
+                    { "question": "3. 迷子になったとき、交番のおまわりさんに何と聞けばいいですか？", "answer": "「家までの道を教えてください」" },
+                    { "question": "4. 町でごみを見つけたら、どうすればいいですか？", "answer": "ごみ箱に捨てたり、持ち帰ったりします。" },
+                    { "question": "5. 大きな道路を渡る時、何に気をつければいいですか？", "answer": "信号と左右の確認" },
+                    { "question": "6. 郵便局でできることは何ですか？", "answer": "手紙を送る" },
+                    { "question": "7. 買い物のとき、お釣りをもらったらどうしますか？", "answer": "数を確認します。" },
+                    { "question": "8. 公園の遊具は、どうやって使いますか？", "answer": "順番を守ります。" },
+                    { "question": "9. 困っている人がいたら、どうしますか？", "answer": "「何かお手伝いしましょうか？」と声をかける" },
+                    { "question": "10. 自分の住んでいる町にどんな場所があるか、一つ言ってみましょう。", "answer": "図書館、公園、スーパーなど" }
+                ],
+                "私たちの住む町": [
+                    { "question": "1. 郵便局では、どんなことができますか？\n\nA. パンを買う\nB. 手紙を送る\nC. 電車に乗る", "answer": "B. 手紙を送る" },
+                    { "question": "2. スーパーマーケットで働く人は、どんなお仕事をしていますか？\n\nA. お料理をする\nB. お魚を釣る\nC. 商品を並べたり、お客さんを助けたりする", "answer": "C. 商品を並べたり、お客さんを助けたりする" },
+                    { "question": "3. 交番で働いている人は、どんな時に助けてくれますか？\n\nA. 迷子になった時\nB. おもちゃを無くした時\nC. お腹がすいた時", "answer": "A. 迷子になった時" },
+                    { "question": "4. 病院で働いている人は、どんなお仕事をしていますか？\n\nA. 病気になった人を治す\nB. 家を建てる\nC. 手紙を運ぶ", "answer": "A. 病気になった人を治す" },
+                    { "question": "5. 公園の遊び場は、どんなルールがありますか？\n\nA. お菓子を食べてもいい\nB. 知らない人に話しかけてもいい\nC. みんなで順番を守って使う", "answer": "C. みんなで順番を守って使う" },
+                    { "question": "6. 図書館では、どんなことができますか？\n\nA. 本を借りる\nB. 大声でおしゃべりする\nC. 走って遊ぶ", "answer": "A. 本を借りる" },
+                    { "question": "7. 消防署には、どんな車が置いてありますか？\n\nA. タクシー\nB. 消防車、救急車\nC. バス", "answer": "B. 消防車、救急車" },
+                    { "question": "8. 電車に乗る時、何に気をつければいいですか？\n\nA. 走って乗り降りする\nB. 黄色い線の内側で待つ\nC. 大きな声で歌う", "answer": "B. 黄色い線の内側で待つ" },
+                    { "question": "9. 町をきれいに保つために、私たちができることは何ですか？\n\nA. ごみを道に捨てる\nB. ごみ拾いをする\nC. ごみを燃やす", "answer": "B. ごみ拾いをする" },
+                    { "question": "10. 買い物の時、お金を払うのはどんな時ですか？\n\nA. お店に入った時\nB. 商品を選んだ時\nC. レジでお店の人に商品を見せた時", "answer": "C. レジでお店の人に商品を見せた時" }
+                ],
+                "季節と生き物": [
+                    { "question": "1. 春に見られる花を一つ答えなさい。", "answer": "さくら、チューリップ" },
+                    { "question": "2. 夏に鳴く虫を一つ答えなさい。", "answer": "せみ" },
+                    { "question": "3. 秋に葉っぱの色が変わる木を何と言いますか？", "answer": "紅葉" },
+                    { "question": "4. 冬になると冬眠する動物を一つ答えなさい。", "answer": "くま" },
+                    { "question": "5. 寒い冬に咲く花を一つ答えなさい。", "answer": "スイセン、ツバキ" },
+                    { "question": "6. 夏に咲く花を一つ答えなさい。", "answer": "ひまわり、アサガオ" },
+                    { "question": "7. 秋に食べる果物を一つ答えなさい。", "answer": "ぶどう、柿" },
+                    { "question": "8. 冬の季節の食べ物を一つ答えなさい。", "answer": "みかん" },
+                    { "question": "9. 雨の季節に多く見られる生き物を一つ答えなさい。", "answer": "かたつむり、かえる" },
+                    { "question": "10. 秋に鳴く虫を一つ答えなさい。", "answer": "コオロギ" }
                 ],
                 
                 // 理科
-                "植物の観察": [
-                    { "question": "植物の葉っぱで光合成が行われるのはなぜですか？", "answer": "葉には光合成を行うための葉緑体があるからです。" },
-                    { "question": "植物が育つのに必要なものは何ですか？", "answer": "お日様の光、水、空気、そして土です。" }
-                ],
-                "昆虫の生活": [
-                    { "question": "チョウの幼虫は何と呼ばれますか？", "answer": "いもむし" },
-                    { "question": "チョウが卵からかえって、さなぎになるまでを何と言いますか？", "answer": "幼虫です。" }
-                ],
-                "季節と天気": [
-                    { "question": "夏に多く降る雨を何と言いますか？", "answer": "にわか雨、夕立など" },
-                    { "question": "冬に降る、白くて冷たいものを何と言いますか？", "answer": "雪です。" }
-                ],
-                "生き物と季節": [
-                    { "question": "冬になると葉を落とす木を何と言いますか？", "answer": "落葉樹" },
-                    { "question": "カブトムシやセミは、主にどの季節に見つけられますか？", "answer": "夏です。" }
-                ],
-                "身近な自然": [
-                    { "question": "水が凍るとどうなりますか？", "answer": "氷になります。" },
-                    { "question": "池や川にいる魚の体は、何で覆われていますか？", "answer": "うろこです。" }
-                ],
-                "気温と天気の変化": [
-                    { "question": "太陽が雲に隠れると、気温はどうなりますか？", "answer": "下がります。" },
-                    { "question": "寒い日に息を吐くと白くなるのはなぜですか？", "answer": "息に含まれている水蒸気が冷やされて、小さな水のつぶになるからです。" }
-                ],
                 "植物の育ち方": [
                     { "question": "植物が育つために必要な3つの要素は何ですか？", "answer": "水、空気、光" },
                     { "question": "植物が成長するために、根っこはどのような役割をしますか？", "answer": "土の中から水や養分を吸い上げます。" }
@@ -471,9 +477,6 @@
                     { "question": "天気と気候の違いは何ですか？", "answer": "天気はある一日の大気の状態を指しますが、気候は長期間にわたる天気の平均的な状態を指します。" },
                     { "question": "台風はどこで発生しますか？", "answer": "熱帯の海" }
                 ],
-                "星座と天体": [
-                    { "question": "夏の夜空に見える、大きな星座を一つ挙げなさい。", "answer": "夏の大三角（ベガ、アルタイル、デネブ）や、さそり座などです。" }
-                ],
                 "電気": [
                     { "question": "豆電球を光らせるには、電池のプラス極とマイナス極をどのように繋げばいいですか？", "answer": "回路が途切れないように、両方の極に電線をつなぎます。" }
                 ],
@@ -489,29 +492,14 @@
                 "太陽系": [
                     { "question": "太陽系の惑星で、地球のすぐ外側を回っている惑星は何ですか？", "answer": "火星です。" }
                 ],
-                "天体と季節": [
-                    { "question": "夏は冬よりも昼間の時間が長いのは、なぜですか？", "answer": "地球の地軸が傾いているため、夏は太陽の光が当たる時間が長くなるからです。" }
+                "てこ、滑車、太陽系": [
+                    { "question": "てこの原理を応用している道具を一つ挙げなさい。", "answer": "ハサミ、ペンチ、栓抜きなど" },
+                    { "question": "滑車を使って重い荷物を持ち上げるとき、力の向きを変えることができるのはなぜですか？", "answer": "ロープを下に引くことで、荷物を上に上げることができるからです。" },
+                    { "question": "太陽系の惑星で、地球のすぐ外側を回っている惑星は何ですか？", "answer": "火星です。" }
                 ],
 
                 
                 // 社会
-                "家族や学校": [
-                    { "question": "家族が協力して家事を分担することは大切ですか？", "answer": "はい" }
-                ],
-                "公共の場所": [
-                    { "question": "多くの人が利用する、図書館や病院のような場所を何と呼びますか？", "answer": "公共施設" }
-                ],
-                "日本の行事": [
-                    { "question": "七夕は、毎年何月何日に行われますか？", "answer": "7月7日" }
-                ],
-                "学校のまわり": [
-                    { "question": "通学路で、車が通る場所を何と呼びますか？", "answer": "車道" },
-                    { "question": "学校の周りにある公共施設を一つ挙げなさい。", "answer": "交番、病院、図書館など" }
-                ],
-                "地域の様子": [
-                    { "question": "地域の消防署や警察署は、どのような役割を担っていますか？", "answer": "私たちの安全や暮らしを守る役割です。" },
-                    { "question": "商店街やスーパーマーケットなど、お店が集まる地域を何と呼びますか？", "answer": "商業地域" }
-                ],
                 "日本の地形": [
                     { "question": "日本の国土の約7割を占めているのは何ですか？", "answer": "山地" },
                     { "question": "川が流れていて、周りが山に囲まれている平らな場所を何と言いますか？", "answer": "盆地です。" }
@@ -560,159 +548,144 @@
                     { "question": "会社が商品を生産するために、土地や建物、機械などを購入しますが、これらを何と呼びますか？", "answer": "資本" },
                     { "question": "お金を銀行に預けることを何と言いますか？", "answer": "貯蓄" },
                     { "question": "日本円とアメリカドルを交換する市場を何と呼びますか？", "answer": "外国為替市場" },
-                    { "question": "商品の値段が全体的に上がり続けることを何と言いますか？", "answer": "インフレーション（インフレ）" },
-                    { "question": "商品の値段が全体的に下がり続けることを何と言いますか？", "answer": "デフレーション（デフレ）" },
-                    { "question": "国が税金を集め、公共事業などに使うことを何と言いますか？", "answer": "財政" },
-                    { "question": "国が経済を安定させるために、お金の量を調整することを何と言いますか？", "answer": "金融政策" },
-                    { "question": "日本が主に輸出しているものを一つ挙げなさい。", "answer": "自動車、電子部品、機械など" }
-                ],
-                "国際関係": [
-                    { "question": "日本が海外の国と貿易を行うことを何と言いますか？", "answer": "国際貿易" },
-                    { "question": "日本の食料自給率は、他の先進国と比べて高いですか、低いですか？", "answer": "低い" }
-                ],
-                 "かん字の学習": [
-                    {"question": "「山」という漢字の読み方を答えなさい。", "answer": "やま、サン"},
-                    {"question": "「林」という漢字を使い、文を作りなさい。", "answer": "私は森の近くに住んでいます。"},
-                    {"question": "「花」という漢字の読み方を答えなさい。", "answer": "はな、カ"},
-                    {"question": "「草」という漢字を使って、「〜〜が生える」という文を完成させなさい。", "answer": "草が生える"},
-                    {"question": "「川」という漢字を使って、文を作りなさい。", "answer": "川で泳ぎました。"},
-                    {"question": "「田」という漢字を使って、文を作りなさい。", "answer": "田んぼでお米を育てます。"},
-                    {"question": "「日」という漢字の読み方を答えなさい。", "answer": "ひ、に、ニチ"},
-                    {"question": "「月」という漢字を使って、文を作りなさい。", "answer": "夜空に月が出ました。"},
-                    {"question": "「犬」という漢字を使って、文を作りなさい。", "answer": "私の家には犬がいます。"},
-                    {"question": "「猫」という漢字の読み方を答えなさい。", "answer": "ねこ、ビョウ"}
+                    { "question": "会社が利益を追求しながらも、社会全体のために貢献する活動を何と言いますか？", "answer": "企業の社会的責任（CSR）です。" }
                 ]
             }
         };
-        // ページの状態を管理する
-        let currentPage = 'main-page';
-        let previousPage = null;
-        let currentUnitName = null;
 
-        // ページを切り替える関数
-        function showPage(pageId, contentData = null) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
+        const pages = document.querySelectorAll('.page');
+        const appContainer = document.getElementById('app-container');
 
-            if (contentData) {
-                renderContent(pageId, contentData);
+        // イベントリスナーの追加
+        document.addEventListener('click', (event) => {
+            const link = event.target.closest('[data-page-link]');
+            if (link) {
+                const pageId = link.getAttribute('data-page-link');
+                showPage(pageId);
             }
-            previousPage = currentPage;
-            currentPage = pageId;
+            const unitLink = event.target.closest('[data-unit-link]');
+            if (unitLink) {
+                const unitName = unitLink.getAttribute('data-unit-link');
+                showUnitDetails(unitName);
+            }
+            if (event.target.id === 'back-to-main-button') {
+                showMainPage();
+            }
+            if (event.target.id === 'back-to-subject-button') {
+                const subjectPageId = event.target.getAttribute('data-subject-page');
+                showPage(subjectPageId);
+            }
+        });
+
+        // ページを表示する関数
+        function showPage(pageId) {
+            pages.forEach(page => page.classList.remove('active'));
+            const pageToShow = document.getElementById(pageId);
+            
+            // Generate content for the page if it's empty
+            if (pageToShow.innerHTML.trim() === '') {
+                generatePageContent(pageId, pageToShow);
+            }
+
+            pageToShow.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // コンテンツをレンダリングする関数
-        function renderContent(pageId, data) {
-            const targetPage = document.getElementById(pageId);
-            let html = '';
+        // メインページに戻る関数
+        function showMainPage() {
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById('main-page').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-            // ページヘッダー（戻るボタンとタイトル）
-            let backButtonText = '&lt; メインページに戻る';
-            let backButtonTarget = 'main-page';
-            if (pageId === 'unit_details_page') {
-                backButtonText = '&lt; 単元リストに戻る';
-                backButtonTarget = 'unit_list_page'; // ダミーの戻る先
-            }
-            html += `<div class="mb-8">
-                        <button data-back-link="${backButtonTarget}" class="back-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition-colors duration-300">
-                            ${backButtonText}
-                        </button>
-                    </div>`;
-            html += `<h2 class="text-3xl font-bold text-gray-700 mb-6">${data.title}</h2>`;
+        // 各学年・教科のページ内容を生成する関数
+        function generatePageContent(pageId, pageElement) {
+            const data = curriculumData[pageId];
+            if (!data) return;
 
-            // コンテンツ本体
-            html += `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">`;
+            const backButton = `<button id="back-to-main-button" class="back-button mb-6 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg shadow-md hover:bg-gray-300 flex items-center gap-2 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                メインページに戻る
+            </button>`;
             
-            if (pageId.includes('_grade_')) {
-                // 単元リストの表示
-                data.units.forEach(unit => {
+            let html = `${backButton}<h2 class="text-3xl font-bold text-gray-700 mb-6">${data.title}</h2><div class="space-y-4">`;
+            data.units.forEach(unit => {
+                html += `<div data-unit-link="${unit}" class="bg-gray-100 p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-200 transition-colors duration-200">
+                            <h3 class="text-xl font-bold text-gray-800">${unit}</h3>
+                        </div>`;
+            });
+            html += `</div>`;
+            pageElement.innerHTML = html;
+        }
+
+        // 単元詳細ページの内容を生成する関数
+        function showUnitDetails(unitName) {
+            pages.forEach(page => page.classList.remove('active'));
+            const unitPage = document.getElementById('unit_details_page');
+            const questions = curriculumData.example_questions[unitName] || [];
+            
+            // どの教科のページに戻るかを決定
+            let subjectPageId = 'main-page';
+            for (const key in curriculumData) {
+                if (curriculumData[key].units && curriculumData[key].units.includes(unitName)) {
+                    subjectPageId = key;
+                    break;
+                }
+            }
+            
+            const backButton = `<button id="back-to-subject-button" data-subject-page="${subjectPageId}" class="back-button mb-6 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg shadow-md hover:bg-gray-300 flex items-center gap-2 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                単元一覧に戻る
+            </button>`;
+
+            let html = `${backButton}<h2 class="text-3xl font-bold text-gray-700 mb-6">${unitName}</h2>`;
+            
+            if (questions.length > 0) {
+                questions.forEach((q, index) => {
                     html += `
-                        <div data-page-link="unit_details_page" data-unit-name="${unit}" class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                            <h4 class="text-xl font-bold mb-2">${unit}</h4>
+                        <div class="mb-6 p-6 bg-blue-50 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold text-blue-800 mb-4">問題 ${index + 1}</h3>
+                            <p class="text-lg text-gray-700 mb-4">${q.question}</p>
+                            ${q.sub_question ? `<p class="text-xl font-bold text-gray-900 mb-4">${q.sub_question}</p>` : ''}
+                            <div class="answer-container">
+                                <button class="show-answer-button px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200">解答を見る</button>
+                                <div class="answer-box mt-4 p-4 bg-blue-100 text-blue-900 rounded-lg hidden">
+                                    <p>${q.answer}</p>
+                                </div>
+                            </div>
                         </div>
                     `;
                 });
-            } else if (pageId === 'unit_details_page') {
-                // 例題の表示
-                if (data.examples && data.examples.length > 0) {
-                    data.examples.forEach((item, index) => {
-                        html += `
-                            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                                <h4 class="text-xl font-bold mb-4">例題 ${index + 1}</h4>
-                                <p class="text-gray-700 mb-4">${item.question}</p>
-                                <button class="toggle-answer bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105" data-answer-id="answer-${index}">
-                                    解答を見る
-                                </button>
-                                <div id="answer-${index}" class="answer-box mt-4 p-4 rounded-lg bg-gray-100 hidden">
-                                    <p class="font-bold">解答:</p>
-                                    <p>${item.answer}</p>
-                                </div>
-                            </div>
-                        `;
-                    });
-                } else {
-                    html += `<p class="text-gray-600">この単元の例題はまだ準備されていません。</p>`;
-                }
+            } else {
+                html += `<p class="text-lg text-gray-600">この単元にはまだ例題がありません。</p>`;
             }
 
-            html += `</div>`;
-            targetPage.innerHTML = html;
-        }
+            unitPage.innerHTML = html;
+            unitPage.classList.add('active');
 
-        // イベントリスナー
-        document.addEventListener('DOMContentLoaded', () => {
-            const appContainer = document.getElementById('app-container');
-
-            appContainer.addEventListener('click', (event) => {
-                const linkElement = event.target.closest('[data-page-link]');
-                const backButton = event.target.closest('[data-back-link]');
-                const toggleAnswerButton = event.target.closest('.toggle-answer');
-
-                if (linkElement) {
-                    const targetPageId = linkElement.dataset.pageLink;
-                    let contentData = null;
-
-                    if (curriculumData[targetPageId]) {
-                        // 教科ページへの遷移
-                        contentData = {
-                            title: linkElement.querySelector('h3').textContent,
-                            units: curriculumData[targetPageId].units
-                        };
-                        showPage(targetPageId, contentData);
-                    } else if (targetPageId === "unit_details_page") {
-                        // 単元詳細ページへの遷移
-                        const unitName = linkElement.dataset.unitName;
-                        if (unitName) {
-                            currentUnitName = unitName;
-                            const examples = curriculumData.example_questions[unitName] || [];
-                            contentData = { title: unitName, examples: examples };
-                            showPage(targetPageId, contentData);
-                        }
-                    }
-                } else if (backButton) {
-                    if (backButton.dataset.backLink === 'main-page') {
-                        showPage('main-page');
+            // 回答表示ボタンのイベントリスナーを設定
+            unitPage.querySelectorAll('.show-answer-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const answerBox = button.nextElementSibling;
+                    answerBox.classList.toggle('hidden');
+                    if (answerBox.classList.contains('hidden')) {
+                        button.textContent = '解答を見る';
                     } else {
-                        // 単元リストページに戻る
-                        const gradeSubjectId = Object.keys(curriculumData).find(key => 
-                            curriculumData[key].units && curriculumData[key].units.includes(currentUnitName)
-                        );
-                        if (gradeSubjectId) {
-                            showPage(gradeSubjectId, curriculumData[gradeSubjectId]);
-                        } else {
-                            showPage('main-page');
-                        }
+                        button.textContent = '解答を隠す';
                     }
-                } else if (toggleAnswerButton) {
-                    const answerId = toggleAnswerButton.dataset.answerId;
-                    const answerBox = document.getElementById(answerId);
-                    if (answerBox) {
-                        answerBox.classList.toggle('hidden');
-                        toggleAnswerButton.textContent = answerBox.classList.contains('hidden') ? '解答を見る' : '解答を隠す';
-                    }
-                }
+                });
             });
-        });
+
+            // MathJax を使って LaTeX をレンダリング
+            if (typeof MathJax !== 'undefined') {
+                MathJax.typesetPromise();
+            }
+        }
     </script>
 </body>
 </html>
+
